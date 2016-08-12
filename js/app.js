@@ -505,13 +505,6 @@ var tb = new KrdToolbox();
 
   });
 
-  app.directive('elementList', function () {
-    return {
-      restrict: 'E',
-      templateUrl: 'element-list.html'
-    };
-  });
-
   app.directive('username', function () {
     return {
       restrict: 'E',
@@ -525,7 +518,7 @@ var tb = new KrdToolbox();
   app.directive('fieldPane', function() {
     return {
       restrict : 'E',
-      templateUrl : 'field-pane.html',
+      templateUrl : 'library/field-pane.html',
       scope: true,
       link: function(scope, element, attrs) {
         scope.fieldAlign = attrs.fieldAlign || "vertical";

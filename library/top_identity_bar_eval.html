@@ -7,7 +7,6 @@
   <div flex>
     <md-toolbar class="md-hue-2">
       <div class="md-toolbar-tools">
-        <!--<h2 hide show-gt-xs>VandAID<span hide show-gt-sm> - Active Interface Design by Vanderbilt</span></h2>-->
         <h2>Active Record: {{records[selectedIndex].id}}, User: {{user.id}}, {{user.key}}</h2>
         <span> | Fields: {{fm.isReady}}</span>
         <span flex></span>
@@ -19,8 +18,6 @@
         <md-tab ng-repeat="record in records">
           <md-tab-label>
             <span>{{record.id}}</span>
-            <!--<span flex></span>-->
-            <!--<md-button class="md-raised">&times;</md-button>-->
           </md-tab-label>
         </md-tab>
       </md-tabs>

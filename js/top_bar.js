@@ -10,7 +10,7 @@
   sidebox.directive('topBar', function () {
     return {
       restrict: 'E',
-      templateUrl: 'top_identity_bar_standard_menu.html'
+      templateUrl: 'library/top_identity_bar.html'
     };
 
   });

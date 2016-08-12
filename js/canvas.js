@@ -52,14 +52,10 @@
     }
   });
 
-
-
-
   app.directive('componentCanvas', function () {
     return {
       restrict: 'E',
-      templateUrl: 'component-canvas.html',
-      //scope: true,
+      templateUrl: 'library/component-canvas.html',
       controller: function ($http, $scope) {
 
         $scope.labManager = new LabManager($scope);
