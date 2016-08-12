@@ -1,0 +1,41 @@
+<md-toolbar layout="row" class="md-menu-toolbar md-whiteframe-z2">
+  <div layout="row">
+    <md-toolbar-filler layout layout-align="center center">
+      <img src="/images/Vanderbilt-Logo-white500x500.png" width="50" height="50"/>
+    </md-toolbar-filler>
+  </div>
+  <div flex>
+    <md-toolbar class="md-hue-2" flex>
+      <div class="md-toolbar-tools">
+        <h1 layout-padding class="md-title" hide show-gt-xs>VandAID<span hide show-gt-sm> - Active Interface Design</span></h1><span flex style="width: 2em"></span>
+
+        <!-- Save button -->
+        <md-button aria-label="Submit" ng-click="submitData()" hide-gt-sm>
+          <md-icon aria-label="Submit Results" class="material-icons">save</md-icon>
+          <!--<span class="hide-sm hide-md">Submit ({{username}})</span>-->
+          <span class="hide-sm hide-md">Save</span>
+        </md-button>
+
+        <!-- Settings button -->
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+          <md-icon aria-label="Toggle Settings" class="material-icons">settings</md-icon></md-icon>
+        </md-button>
+      </div>
+
+    </md-toolbar>
+
+    <md-menu-bar>
+      <md-menu ng-repeat="category in itemManager.categories">
+        <button ng-click="$mdOpenMenu()">{{category.name}}</button>
+        <md-menu-content layout-padding>
+          <md-menu-item ng-repeat="item in itemManager.getItemsByCategory(category.id)" flex>
+            <md-checkbox ng-disabled="item.disabled"
+                         ng-model="fm.values['items___'+item.id]"
+                         aria-label="item.name">{{item.name}}
+            </md-checkbox>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </md-menu-bar>
+  </div>
+</md-toolbar>

@@ -1,0 +1,18 @@
+<!--<div ng-if="fm.values['items___' + itemId]">-->
+<!--<div>-->
+  <floating-label ng-show="vaOptions.show_labels">{{item.name}}</floating-label>
+  <div style="position: relative" ng-class="{'hover-target' : item.hasFields()}">
+    <md-menu ng-if="item.hasFields()" class="component-settings-icon hover-content" md-offset="-30 0" md-position-mode="target-right target">
+      <md-button class="md-raised md-icon-button md-primary" ng-click="library.openMenu($mdOpenMenu, $event)"
+          aria-label="Settings"><!---->
+        <md-icon class="material-icons">settings</md-icon>
+      </md-button>
+      <md-menu-content>
+        <field-pane ng-repeat="fieldId in item.fields"></field-pane>
+      </md-menu-content>
+    </md-menu>
+
+    <div ng-include="getContentUrl()" class="component" ng-class="{'component-has-settings' : item.hasFields()}"></div>
+  </div>
+
+<!--</div>-->

@@ -1,0 +1,59 @@
+<md-dialog aria-label="Instructions" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Instructions</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content ng-cloak>
+      <div class="md-dialog-content">
+        <h2>Scenario:</h2>
+        <p>Imagine you are receiving handoff from one of your colleagues to cover a set of patients for the night.
+          Before your handoff, you colleague will hand you a printed patient list. Below are 5 patients that might
+          appear on that list.</p>
+
+        <p>Your task is to customize this list using the toolbox to your left. When you are finished, use the "Save and
+          Submit" button below to send your preferences to the design team.</p>
+        <div layout="column" layout-gt-md="row">
+          <md-card flex>
+            <img src="/img/item-selection.PNG">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">Step 1</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p>Select the items you want to appear on the service list.</p>
+            </md-card-content>
+          </md-card>
+          <md-card flex>
+            <img src="/img/item-configure.PNG">
+            <md-card-title>
+              <md-card-title-text><span class="md-headline">Step 2</span></md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p>
+                <md-icon class="md-18">settings</md-icon>
+                Configure items according to your preferences.
+              </p>
+            </md-card-content>
+          </md-card>
+          <md-card flex>
+            <img src="/img/save-and-submit.PNG">
+            <md-card-title>
+              <md-card-title-text><span class="md-headline">Step 3</span></md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p>When you have everything as you want it, press the [Save and Submit] button, and then complete a short
+                survey regarding this process! Thank you!</p>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

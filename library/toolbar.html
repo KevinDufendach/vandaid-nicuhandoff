@@ -1,0 +1,29 @@
+<!--<div ng-controller="ToolbarController as ctrl" ng-cloak>-->
+  <md-toolbar class="md-menu-toolbar">
+    <div layout="row">
+      <md-toolbar-filler layout layout-align="center center">
+        <md-icon aria-label="Toggle Toolbox" class="material-icons">build</md-icon>
+      </md-toolbar-filler>
+      <div>
+        <h2 class="md-toolbar-tools">Toolbox</h2>
+        <md-menu-bar>
+          <md-menu>
+            <div ng-repeat="category in categories">
+              <button ng-click="$mdOpenMenu()">
+                {{ category.category }}
+              </button>
+              <md-menu-content>
+                <md-list layout-padding>
+                  <md-list-item ng-repeat="item in category.items" ng-click="itemCtrl.toggleItemSelected(item, true)">
+                    <p> {{ item.name }} </p>
+                    <md-checkbox class="md-secondary" ng-disabled="item.disabled" ng-model="item.selected"></md-checkbox>
+                  </md-list-item>
+                </md-list>
+              </md-menu-content>
+            </div>
+          </md-menu>
+        </md-menu-bar>
+      </div>
+    </div>
+  </md-toolbar>
+<!--</div>-->

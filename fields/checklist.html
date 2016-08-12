@@ -1,0 +1,3 @@
+<div ng-repeat="option in field.options">
+  <md-checkbox ng-checked="exists(option.value, field.value)" ng-click="toggle(option.value, field.value)">{{ option.label }}</md-checkbox>
+</div>

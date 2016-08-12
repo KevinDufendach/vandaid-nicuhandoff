@@ -1,0 +1,7 @@
+<div layout="column">
+  <div flex layout="row" ng-repeat="status in patient.plans_by_system">
+    <textarea rows=1 ng-model="status.system" class="label inline no-resize no-overflow" cols="4" placeholder="system"></textarea>
+    <div contenteditable style="width: 100%;" placeholder="plan" class="content-editable" flex>{{status.notes}}</div>
+  </div>
+  <!--<span style="font-size: 80%;" ng-click="patient.plans_by_system.push({'system':'','notes':''})" class="pointer">[+]</span>-->
+</div>

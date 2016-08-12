@@ -1,0 +1,39 @@
+<!--<floating-label>Age and Weight</floating-label>-->
+<div ng-switch="fm.values.age_weight_style">
+  <table class="small-padding-table thin-border">
+    <tbody ng-switch-default>
+      <tr>
+        <th ng-show="fm.values.age_weight_birth == 1">Birth</th>
+        <th>Current</th>
+      </tr>
+      <tr>
+        <td ng-show="fm.values.age_weight_birth">{{::patient.demographics.birthdate | frameshiftDate : scenarioDate | date : 'M-d'}}</td>
+        <td>{{::calcDOL(patient.demographics.birthdate, scenarioDate) | ageFilter}}</td>
+      </tr>
+      <tr>
+        <td ng-show="fm.values.age_weight_birth"><span ng-bind-html="::patient.demographics.gestation | weeksAndDays"></span></td>
+        <td><span ng-bind-html="::patient.demographics.gestation +
+          calcDOL(patient.demographics.birthdate, scenarioDate) | weeksAndDays"></span></td>
+      </tr>
+      <tr>
+        <td ng-show="fm.values.age_weight_birth">{{::patient.vitals.birthweight*1000}}g</td>
+        <td>{{::patient.vitals.wt*1000}}g</td>
+      </tr>
+    </tbody>
+  </table>
+  <table ng-switch-when="diagram">
+    <tbody>
+    <tr>
+      <td colspan="2" align="center"><span ng-bind-html="::patient.demographics.gestation | weeksAndDays"></span></td>
+    </tr>
+    <tr>
+      <td style="border-right: thin solid black; padding: 6px 0">{{::patient.vitals.wt*1000}}g</td>
+      <td style="padding: 6px 0">{{::calcDOL(patient.demographics.birthdate, scenarioDate)}}d</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><span ng-bind-html="::patient.demographics.gestation +
+        calcDOL(patient.demographics.birthdate, scenarioDate)| weeksAndDays"></span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

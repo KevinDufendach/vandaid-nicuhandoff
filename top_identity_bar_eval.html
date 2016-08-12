@@ -1,0 +1,30 @@
+<md-toolbar layout="row" class="md-menu-toolbar md-whiteframe-z2">
+  <div layout="row">
+    <md-toolbar-filler layout layout-align="center center">
+      <img src="/img/Vanderbilt-Logo-white500x500.png" width="50" height="50"/>
+    </md-toolbar-filler>
+  </div>
+  <div flex>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <!--<h2 hide show-gt-xs>VandAID<span hide show-gt-sm> - Active Interface Design by Vanderbilt</span></h2>-->
+        <h2>Active Record: {{records[selectedIndex].id}}, User: {{user.id}}, {{user.key}}</h2>
+        <span> | Fields: {{fm.isReady}}</span>
+        <span flex></span>
+        <md-button hide-gt-sm class="md-icon-button" ng-click="toggleSidenav('left-sidenav')"><md-icon>menu</md-icon></md-button>
+      </div>
+    </md-toolbar>
+    <div flex>
+      <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+        <md-tab ng-repeat="record in records">
+          <md-tab-label>
+            <span>{{record.id}}</span>
+            <!--<span flex></span>-->
+            <!--<md-button class="md-raised">&times;</md-button>-->
+          </md-tab-label>
+        </md-tab>
+      </md-tabs>
+
+    </div>
+  </div>
+</md-toolbar>

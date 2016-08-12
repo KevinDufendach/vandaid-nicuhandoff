@@ -1,0 +1,17 @@
+<table class="small-padding-table">
+  <tbody>
+    <!--<tr>-->
+      <!--<th>Medication</th>-->
+      <!--<th ng-show="fm.values.med_components___brand">Brand</th>-->
+      <!--<th ng-show="fm.values.med_components___dose">Dose</th>-->
+      <!--<th ng-show="fm.values.med_components___timing">Timing</th>-->
+      <!--<th ng-show="fm.values.med_components___route">Route</th>-->
+    <!--</tr>-->
+    <tr ng-repeat="med in patient.medications">
+      <td>{{ med.generic }}</td>
+      <td ng-show="fm.values.med_components___dose">{{ med.dose }}<span ng-show="fm.values.med_components___med_units"> {{ med.med_units }}</span></td>
+      <td ng-show="fm.values.med_components___timing">{{ med.timing }}</td>
+      <td ng-show="fm.values.med_components___route">{{ med.route }}</td>
+    </tr>
+  </tbody>
+</table>

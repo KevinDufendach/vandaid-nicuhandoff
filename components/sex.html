@@ -1,0 +1,8 @@
+<div ng-if="fm.values.sex_display != 'icon'">
+  {{patient.demographics.sex | limitTo : 1 : 0 | uppercase}}
+</div>
+<div ng-if="fm.values.sex_display == 'icon'" ng-switch="patient.demographics.sex">
+  <span ng-switch-when="male">&#9794;</span>
+  <span ng-switch-when="female">&#9792;</span>
+  <span ng-switch-default>?</span>
+</div>

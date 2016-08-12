@@ -1,0 +1,700 @@
+[
+  {
+    "demographics": {
+      "id": "1234567",
+      "pid": "Patient/1234567",
+      "name_first": "Johnny",
+      "name_last": "Newborn",
+      "name_middle": "Dwight",
+      "sex": "male",
+      "birthdate": "2015-9-23",
+      "gestation": 227,
+      "location": "4103-A",
+      "mother": 12987654
+    },
+    "provider": {
+      "team": "red",
+      "attending": "Dr. Smith"
+    },
+    "vitals": {
+      "birthweight": 2.1,
+      "wt": 2.1,
+      "bp_s": {
+        "low": 55,
+        "mean": 63,
+        "hi": 72
+      },
+      "bp_m": {
+        "low": 48,
+        "mean": 53,
+        "hi": 57
+      },
+      "bp_d": {
+        "low": 38,
+        "mean": 44,
+        "hi": 48
+      },
+      "spo2": {
+        "low": 54,
+        "mean": 91,
+        "hi": 97
+      },
+      "hr": {
+        "low": 102,
+        "mean": 142,
+        "hi": 173
+      },
+      "resp": {
+        "low": 0,
+        "mean": 2,
+        "hi": 52
+      },
+      "temp": {
+        "low": 36.8,
+        "mean": 37.1,
+        "hi": 37.2
+      }
+    },
+    "blood_type": {
+      "pt_bt": "O+",
+      "mat_bt": "A-"
+    },
+    "ventilator": {
+      "mode": "PC-SIMV",
+      "rate": 30,
+      "pip": 21,
+      "ps": 8,
+      "peep": 5,
+      "fio2": 54
+    },
+    "pt_summary": "32 wk, 2100g infant with pulmonary insufficiency",
+    "plans_by_system": [
+      {
+        "system": "Neuro",
+        "notes": "Gr2 b/l IVH"
+      },
+      {
+        "system": "FEN",
+        "notes": "Working on feeds"
+      },
+      {
+        "system": "Resp",
+        "notes": "s/p surf x2"
+      },
+      {
+        "system": "CV",
+        "notes": "ECHO: small PDA"
+      }
+    ],
+    "todotext": "[ ] PM Blood gas\nOK to wean vent",
+    "todo": [
+      {
+        "checkbox": true,
+        "checked": false,
+        "text": "6pm blood gas"
+      },
+      {
+        "checkbox": false,
+        "checked": false,
+        "text": "If has low blood glucose, obtain critical labs"
+      }
+    ],
+    "lines": {
+      "PICC": {
+        "age": "3d"
+      },
+      "UAC": {
+        "age": "6d"
+      },
+      "IV": {
+        "age": "2d"
+      }
+    },
+    "alerts": [
+      {
+        "type": "isolation",
+        "label": "isolation",
+        "text": "Contact isolation"
+      },
+      {
+        "type": "respiratory",
+        "label": "intubation",
+        "text": "Difficult intubation"
+      }
+    ],
+    "ivfluids": [
+      {
+        "route": "PICC",
+        "content": "TPN",
+        "rate": 7.5,
+        "dextrose": 7.2,
+        "AA": 33,
+        "Na": 30,
+        "K": 15,
+        "Ca": 15,
+        "P": 7,
+        "Acetate": 10,
+        "Cl": 35
+      },
+      {
+        "route": "PICC",
+        "content": "DA",
+        "rate": 0.43,
+        "concentration": 1600,
+        "units": "mcg",
+        "dextrose": 5
+      },
+      {
+        "route": "UAC",
+        "content": "1/2 NaAc",
+        "rate": 0.5,
+        "Na": 77,
+        "Acetate": 77
+      }
+    ],
+    "enteral_fluids": [
+      {
+        "route": "PO",
+        "content": "EBM",
+        "volume": 17,
+        "frequency": 3,
+        "kcal": 20,
+        "duration": 30
+      }
+    ],
+    "medications": [
+      {
+        "generic": "ampicillin",
+        "dose": 105,
+        "med_units": "mg",
+        "timing": "q8h",
+        "route": "iv"
+      },
+      {
+        "generic": "gentamicin",
+        "dose": 8.4,
+        "med_units": "mg",
+        "timing": "q24h",
+        "route": "iv"
+      }
+    ]
+  },
+  {
+    "demographics": {
+      "id": "112358",
+      "pid": "Patient/112358",
+      "name_first": "Pamela",
+      "name_last": "Howard",
+      "name_middle": "Jean",
+      "sex": "female",
+      "birthdate": "2015-9-21",
+      "gestation": 227,
+      "location": "4102-F"
+    },
+    "provider": {
+      "team": "red",
+      "attending": "Dr. Smith"
+    },
+    "vitals": {
+      "birthweight": 3.420,
+      "wt": 3.370,
+      "bp_s": {
+        "low": 55,
+        "mean": 63,
+        "hi": 72
+      },
+      "bp_m": {
+        "low": 48,
+        "mean": 53,
+        "hi": 57
+      },
+      "bp_d": {
+        "low": 38,
+        "mean": 44,
+        "hi": 48
+      },
+      "spo2": {
+        "low": 54,
+        "mean": 91,
+        "hi": 97
+      },
+      "hr": {
+        "low": 102,
+        "mean": 142,
+        "hi": 173
+      },
+      "resp": {
+        "low": 0,
+        "mean": 2,
+        "hi": 52
+      },
+      "temp": {
+        "low": 36.8,
+        "mean": 37.1,
+        "hi": 37.2
+      }
+    },
+    "events": {
+      "brady": 3,
+      "desat": 7
+    },
+    "ventilator": {
+      "mode": "HFOV",
+      "amp": 24,
+      "map": 14,
+      "hz": 8,
+      "fio2": 54,
+      "ino": 20
+    },
+    "pt_summary": "39 2/7, 3420g infant with pulmonary hypertension",
+    "plans_by_system": [
+      {
+        "system": "Neuro",
+        "notes": "Gr2 b/l IVH"
+      },
+      {
+        "system": "FEN",
+        "notes": "Working on feeds"
+      },
+      {
+        "system": "Resp",
+        "notes": "Weaning vent"
+      },
+      {
+        "system": "CV",
+        "notes": "ECHO: lg PDA"
+      }
+    ],
+    "todotext": "[ ] PM Blood gas\nOK to wean vent",
+    "todo": [
+      {
+        "checkbox": true,
+        "checked": false,
+        "text": "6pm blood gas"
+      },
+      {
+        "checkbox": false,
+        "checked": false,
+        "text": "If has low blood glucose, obtain critical labs"
+      }
+    ],
+    "lines": {
+      "PICC": {
+        "age": "3d"
+      },
+      "UAC": {
+        "age": "6d"
+      },
+      "IV": {
+        "age": "2d"
+      }
+    },
+    "alerts": [
+      {
+        "type": "isolation",
+        "label": "isolation",
+        "text": "Contact isolation"
+      },
+      {
+        "type": "respiratory",
+        "label": "intubation",
+        "text": "Difficult intubation"
+      }
+    ],
+    "ivfluids": [
+      {
+        "route": "PICC",
+        "content": "TPN",
+        "rate": 7.5,
+        "dextrose": 7.2,
+        "AA": 33,
+        "Na": 30,
+        "K": 15,
+        "Ca": 15,
+        "P": 7,
+        "Acetate": 10,
+        "Cl": 35
+      },
+      {
+        "route": "PICC",
+        "content": "DA",
+        "rate": 0.43,
+        "concentration": 1600,
+        "units": "mcg",
+        "dextrose": 5
+      },
+      {
+        "route": "UAC",
+        "content": "1/2 NaAc",
+        "rate": 0.5,
+        "Na": 77,
+        "Acetate": 77
+      }
+    ],
+    "enteral_fluids": [
+      {
+        "route": "PO",
+        "content": "EBM",
+        "volume": 17,
+        "frequency": 3,
+        "kcal": 20,
+        "duration": 60
+      }
+    ],
+    "medications": [
+      {
+        "generic": "vitamin D",
+        "dose": 400,
+        "med_units": "units",
+        "timing": "daily",
+        "route": "po"
+      },
+      {
+        "generic": "Iron",
+        "dose": 9.2,
+        "med_units": "mg",
+        "timing": "daily",
+        "route": "po"
+      }
+    ]
+  },
+  {
+    "pt_summary": "26 wk, 760g infant. PIE",
+    "demographics": {
+      "id": "87654321",
+      "pid": "Patient/87654321",
+      "name_first": "Timothy",
+      "name_last": "Brown",
+      "sex": "male",
+      "birthdate": "2015-09-12",
+      "gestation": 187,
+      "location": "4202-F"
+    },
+    "provider": {
+      "team": "red",
+      "attending": "Dr. Smith"
+    },
+    "vitals": {
+      "birthweight": 0.76,
+      "wt": 0.826,
+      "bp_s": {
+        "low": 55,
+        "mean": 63,
+        "hi": 72
+      },
+      "bp_m": {
+        "low": 48,
+        "mean": 53,
+        "hi": 57
+      },
+      "bp_d": {
+        "low": 38,
+        "mean": 44,
+        "hi": 48
+      },
+      "spo2": {
+        "low": 54,
+        "mean": 91,
+        "hi": 97
+      },
+      "hr": {
+        "low": 102,
+        "mean": 142,
+        "hi": 173
+      },
+      "resp": {
+        "low": 0,
+        "mean": 2,
+        "hi": 52
+      },
+      "temp": {
+        "low": 36.8,
+        "mean": 37.1,
+        "hi": 37.2
+      }
+    },
+    "ventilator": {
+      "mode": "HFJV",
+      "freq": 320,
+      "pip": 22,
+      "peep": 8,
+      "fio2": 54,
+      "map_obs": 10.4
+    },
+    "ivfluids": [
+      {
+        "route": "PIV",
+        "content": "D10",
+        "rate": 3.5,
+        "dextrose": 10
+      }
+    ],
+    "plans_by_system": [
+      {
+        "system": "FEN",
+        "notes": "NPO"
+      },
+      {
+        "system": "Resp",
+        "notes": "Weaning vent"
+      },
+      {
+        "system": "CV",
+        "notes": "ECHO: normal"
+      }
+    ],
+    "alerts": [
+      {
+        "type": "code",
+        "label": "code status",
+        "text": "Limited DNR"
+      }
+    ],
+    "medications": [
+      {
+        "generic": "caffeine",
+        "dose": 12.8,
+        "med_units": "mg",
+        "timing": "daily",
+        "route": "po"
+      },
+      {
+        "generic": "furosemide",
+        "brand": "Lasix",
+        "dose": 2.5,
+        "med_units": "mg",
+        "timing": "BID",
+        "route": "po"
+      }
+    ]
+  },
+  {
+    "pt_summary": "39 wk, 3400g with gastroschisis",
+    "demographics": {
+      "id": "18273654",
+      "pid": "Patient/18273654",
+      "name_first": "Stephanie",
+      "name_middle": "Betty",
+      "name_last": "Jenkins",
+      "sex": "female",
+      "birthdate": "2015-9-13",
+      "gestation": 273,
+      "location": "4601-J"
+    },
+    "plans_by_system": [
+      {
+        "system": "FEN",
+        "notes": "NPO, Jaundice"
+      },
+      {
+        "system": "Surg",
+        "notes": "s/p repair 10/27"
+      }
+    ],
+    "provider": {
+      "team": "blue",
+      "attending": "Dr. Jones"
+    },
+    "vitals": {
+      "birthweight": 3.4,
+      "wt": 3.76,
+      "bp_s": {
+        "low": 55,
+        "mean": 63,
+        "hi": 72
+      },
+      "bp_m": {
+        "low": 48,
+        "mean": 53,
+        "hi": 57
+      },
+      "bp_d": {
+        "low": 38,
+        "mean": 44,
+        "hi": 48
+      },
+      "spo2": {
+        "low": 54,
+        "mean": 91,
+        "hi": 97
+      },
+      "hr": {
+        "low": 102,
+        "mean": 142,
+        "hi": 173
+      },
+      "resp": {
+        "low": 0,
+        "mean": 2,
+        "hi": 52
+      },
+      "temp": {
+        "low": 36.8,
+        "mean": 37.1,
+        "hi": 37.2
+      }
+    },
+    "icd": [
+      "Gastroschisis",
+      "Jaundice"
+    ],
+    "ivfluids": [
+      {
+        "route": "PICC",
+        "content": "TPN",
+        "rate": 18.5,
+        "dextrose": 9.3,
+        "AA": 33,
+        "Na": 30,
+        "K": 15,
+        "Ca": 15,
+        "P": 7,
+        "Acetate": 10,
+        "Cl": 35
+      }
+    ],
+    "enteral_fluids": [
+    ],
+    "npo": false,
+    "alerts": [
+      {
+        "type": "identification",
+        "label": "ID",
+        "text": "Alternate MRN"
+      },
+      {
+        "type": "information",
+        "label": "ROI",
+        "text": "No info"
+      }
+    ],
+    "medications": [
+
+    ]
+  },
+
+  {
+    "demographics": {
+      "id": "5463154",
+      "pid": "Patient/5463154",
+      "name_first": "Abigail",
+      "name_last": "Lee",
+      "name_middle": "Deleanore",
+      "sex": "female",
+      "birthdate": "2015-9-3",
+      "gestation": 177,
+      "location": "4203-B"
+    },
+    "provider": {
+      "team": "red",
+      "attending": "Dr. Smith"
+    },
+    "vitals": {
+      "birthweight": 0.74,
+      "wt": 0.81,
+      "bp_s": {
+        "low": 55,
+        "mean": 63,
+        "hi": 72
+      },
+      "bp_m": {
+        "low": 48,
+        "mean": 53,
+        "hi": 57
+      },
+      "bp_d": {
+        "low": 38,
+        "mean": 44,
+        "hi": 48
+      },
+      "spo2": {
+        "low": 54,
+        "mean": 91,
+        "hi": 97
+      },
+      "hr": {
+        "low": 102,
+        "mean": 142,
+        "hi": 173
+      },
+      "resp": {
+        "low": 0,
+        "mean": 2,
+        "hi": 52
+      },
+      "temp": {
+        "low": 36.8,
+        "mean": 37.1,
+        "hi": 37.2
+      }
+    },
+    "ventilator": {
+      "mode": "VC-SIMV",
+      "rate": 40,
+      "vt": 4,
+      "ps": 5,
+      "peep": 6,
+      "fio2": 34
+    },
+    "pt_summary": "25 wk, 740g infant. Pulmonary insufficiency, large PDA",
+    "plans_by_system": [
+      {
+        "system": "FEN",
+        "notes": "Feeds intolerance"
+      },
+      {
+        "system": "Resp",
+        "notes": "Weaning vent"
+      },
+      {
+        "system": "CV",
+        "notes": "Lg PDA, s/p ind x2"
+      }
+    ],
+    "todotext": "Monitor feeds\nOK to hold if does not tolerate",
+    "lines": {
+      "PICC": {
+        "age": "6d"
+      },
+      "IV": {
+        "age": "2d"
+      }
+    },
+    "alerts": [
+    ],
+    "ivfluids": [
+      {
+        "route": "PICC",
+        "content": "TPN",
+        "rate": 4,
+        "dextrose": 9.2,
+        "AA": 33,
+        "Na": 30,
+        "K": 15,
+        "Ca": 15,
+        "P": 7,
+        "Acetate": 10,
+        "Cl": 35
+      }
+    ],
+    "enteral_fluids": [
+      {
+        "route": "PO",
+        "content": "EBM",
+        "volume": 3,
+        "frequency": 3,
+        "duration": 60,
+        "kcal": 20
+      }
+    ],
+    "medications": [
+      {
+        "generic": "caffeine",
+        "dose": 4,
+        "med_units": "mg",
+        "timing": "daily",
+        "route": "IV"
+      }
+    ]
+  }
+]

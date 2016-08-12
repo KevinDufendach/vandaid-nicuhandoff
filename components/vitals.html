@@ -1,0 +1,27 @@
+<table ng-init="vitals = patient.vitals">
+  <tbody>
+  <tr ng-show="fm.values.vitals_components___temp">
+    <td>T:</td>
+    <td class="no-wrap">{{vitals.temp.low}}-{{vitals.temp.hi}} ({{vitals.temp.mean}})</td>
+  </tr>
+  <tr ng-show="fm.values.vitals_components___bp">
+    <td>BP:</td>
+    <td class="no-wrap" ng-switch="fm.values.bp_display">
+      <div ng-switch-default>{{vitals.bp_s.low}}-{{vitals.bp_s.hi}}/{{vitals.bp_d.low}}-{{vitals.bp_d.hi}} ({{vitals.bp_m.low}}-{{vitals.bp_m.hi}})</div>
+      <div ng-switch-when="no_mean">{{vitals.bp_s.low}}-{{vitals.bp_s.hi}}/{{vitals.bp_d.low}}-{{vitals.bp_d.hi}}</div>
+      <div ng-switch-when="mean">({{vitals.bp_m.low}}-{{vitals.bp_m.hi}})</div>
+    </td>
+  </tr>
+  <tr ng-show="fm.values.vitals_components___hr">
+    <td>HR:</td>
+    <td class="no-wrap">{{vitals.hr.low}}-{{vitals.hr.hi}} ({{vitals.hr.mean}})</td>
+  </tr>
+  <tr ng-show="fm.values.vitals_components___spo2">
+    <td>O2:</td>
+    <td class="no-wrap">{{vitals.spo2.low}}-{{vitals.spo2.hi}} ({{vitals.spo2.mean}})</td>
+  </tr>
+  <tr ng-show="fm.values.vitals_components___resp">
+    <td>R:</td>
+    <td class="no-wrap">{{vitals.resp.low}}-{{vitals.resp.hi}} ({{vitals.resp.mean}})</td>
+  </tr>
+</table>

@@ -1,0 +1,10 @@
+<div class="no-wrap no-overflow" ng-switch="fm.values.name_display" style="font-size: 120%">
+  <span ng-switch-default>{{patient.demographics.name_last}},
+		{{patient.demographics.name_first}}</span>
+  <span ng-switch-when="short">{{patient.demographics.name_last}},
+		{{patient.demographics.name_first | limitTo : 1 : 0}}
+		{{patient.demographics.name_middle | limitTo : 1 : 0}}</span>
+  <span ng-switch-when="abbr">{{patient.demographics.name_last
+		| limitTo: 1: 0}}, {{patient.demographics.name_first | limitTo : 1 :
+		0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</span>
+</div>

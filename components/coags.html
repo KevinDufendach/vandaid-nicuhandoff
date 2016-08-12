@@ -1,0 +1,61 @@
+<div ng-show="componentCtrl.hasData">
+	<div ng-show="fm.values.coags_display === 'stick'" layout="row">
+		<table style="table-layout: fixed">
+			<tbody>
+				<tr>
+					<td style="border-right: thin solid black" width="50%"><lab loinc="5902-2"></lab></td>
+					<td width="50%"><lab loinc="3173-2"></lab></td>
+				</tr>
+				<tr>
+					<td class="lower_v_stick" colspan=2><lab loinc="6301-6"></lab></td>
+				</tr>
+      </tbody>
+    </table>
+    <table class="small-padding-table" >
+      <tbody>
+				<tr ng-show="fm.values.coag_components___fibrinogen">
+					<td>F:</td>
+					<td><lab loinc="3255-7"></lab></td>
+				</tr>
+				<tr ng-show="fm.values.coag_components___ddimer">
+					<td>ddim:</td>
+					<td><lab loinc="48065-7"></lab></td>
+				</tr>
+				<tr ng-show="fm.values.coag_components___hepassay">
+					<td>HA:</td>
+					<td><lab loinc="3218-5"></lab></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-show="fm.values.coags_display === 'list'" class="small-padding-table">
+		<table>
+			<tbody>
+				<tr>
+					<td>PT:</td>
+					<td><lab loinc="5902-2"></lab></td>
+				</tr>
+				<tr>
+					<td>PTT:</td>
+					<td><lab loinc="3173-2"></lab></td>
+				</tr>
+				<tr>
+					<td>INR:</td>
+					<td><lab loinc="6301-6"></lab></td>
+				</tr>
+				<tr ng-show="fm.values.coag_components___fibrinogen">
+					<td>F:</td>
+					<td><lab loinc="3255-7"></lab></td>
+				</tr>
+				<tr ng-show="fm.values.coag_components___ddimer">
+					<td>DDim:</td>
+					<td><lab loinc="48065-7"></lab></td>
+				</tr>
+				<tr ng-show="fm.values.coag_components___hepassay">
+					<td>HA:</td>
+					<td><lab loinc="3218-5"></lab></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

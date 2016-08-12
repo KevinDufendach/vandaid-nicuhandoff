@@ -1,0 +1,36 @@
+<table class="small-padding-table thin-border">
+  <tbody>
+    <tr>
+      <th ng-show="fm.values.fluid_components___route">route</th>
+      <th ng-show="fm.values.fluid_components___content">content</th>
+      <th ng-show="fm.values.fluid_components___rate" data-toggle="tooltip" title="mL/hr">rate</th>
+      <th ng-show="fm.values.fluid_components___dose">dose</th>
+      <th ng-show="fm.values.fluid_components___gir">GIR</th>
+      <th ng-show="fm.values.fluid_components___na">Na</th>
+      <th ng-show="fm.values.fluid_components___k">K</th>
+      <th ng-show="fm.values.fluid_components___ca">Ca</th>
+      <th ng-show="fm.values.fluid_components___p">P</th>
+      <th ng-show="fm.values.fluid_components___cl">Cl</th>
+      <th ng-show="fm.values.fluid_components___acetate">Acet</th>
+      <th ng-show="fm.values.fluid_components___aa"><span data-toggle="tooltip" title="g/kg/day">AA</span></th>
+      <th ng-show="fm.values.fluid_components___volume"><span data-toggle="tooltip" title="mL/kg/day">mL/kg</span></th>
+    </tr>
+    <tr ng-repeat="fluid in patient.ivfluids">
+      <td ng-show="fm.values.fluid_components___route">{{::fluid.route}}</td>
+      <td ng-show="fm.values.fluid_components___content">{{::fluid.content}}</td>
+      <td ng-show="fm.values.fluid_components___rate" data-toggle="tooltip" title="mL/hr">{{::fluid.rate | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___dose">{{::fluid.concentration * fluid.rate / patient.vitals.wt / 60 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___gir">{{::fluid.dextrose * fluid.rate / (patient.vitals.wt * 6) | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___na">{{::fluid.Na * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___k">{{::fluid.K * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___ca">{{::fluid.Ca * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___p">{{::fluid.P * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___cl">{{::fluid.Cl * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___acetate">{{::fluid.Acetate * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___aa">{{::fluid.AA * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+      <td ng-show="fm.values.fluid_components___volume" data-toggle="tooltip" title="mL/kg/day">{{::fluid.rate * 24 / patient.vitals.wt | number:0}}</td>
+    </tr>
+  </tbody>
+</table>
+<div ng-show="fm.values.fluid_components___total">Total IV: {{ptCtrl.totalIVFluids / patient.vitals.wt | number:0}} mL/kg/d</div>
+

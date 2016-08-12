@@ -1,0 +1,28 @@
+"ivfluids": [
+{
+"route": "PICC",
+"content": "TPN",
+"rate": 11.5,
+
+<table class="small-padding-table">
+  <tbody>
+  <tr>
+    <th ng-repeat="label in field.options" ng-show="exists(field.values, label)">{{label}}</th>
+  </tr>
+  <tr ng-repeat="fluid in patient.ivfluids">
+    <td ng-show="fields.fluid_components.options.route.value">{{::fluid.route}}</td>
+    <td ng-show="fields.fluid_components.options.content.value">{{::fluid.content}}</td>
+    <td ng-show="fields.fluid_components.options.rate.value" data-toggle="tooltip" title="mL/hr">{{::fluid.rate | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.dose.value">{{::fluid.concentration * fluid.rate / patient.vitals.wt / 60 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.gir.value">{{::fluid.dextrose * fluid.rate / (patient.vitals.wt * 6) | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.na.value">{{::fluid.Na * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.k.value">{{::fluid.K * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.ca.value">{{::fluid.Ca * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.p.value">{{::fluid.P * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.cl.value">{{::fluid.Cl * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.acetate.value">{{::fluid.Acetate * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.aa.value">{{::fluid.AA * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+    <td ng-show="fields.fluid_components.options.volume.value" data-toggle="tooltip" title="mL/kg/day">{{::fluid.rate * 24 / patient.vitals.wt | number:0}}</td>
+  </tr>
+  </tbody>
+</table>

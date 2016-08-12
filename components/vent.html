@@ -1,0 +1,161 @@
+<div ng-if="::patient.hasOwnProperty('ventilator')" ng-switch="fm.values.vent_display" ng-init="vent = patient.ventilator" layout="row">
+  <div ng-switch-default>
+
+    <span class="canvas-label">{{::vent.mode}}</span>
+
+    <!--SIMV-->
+    <table ng-if="::vent.mode == 'VC-SIMV' || vent.mode == 'MMV' || vent.mode == 'PC-PSV VG' || vent.mode == 'PC-SIMV' || vent.mode == 'NI-CMV' || vent.mode == 'PC-PSV VG'" class="small-padding-table">
+      <tbody>
+      <tr>
+        <td>Rate</td>
+        <td>{{::vent.rate}}</td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>{{::vent.rate}}</td>
+      </tr>
+      <tr
+        ng-show="vent.mode == 'VC-SIMV' || vent.mode == 'MMV' || vent.mode == 'PC-PSV VG'">
+        <td>V<sub>T</sub></td>
+        <td>{{::vent.vt}}</td>
+      </tr>
+      <tr
+        ng-show="vent.mode == 'PC-SIMV' || vent.mode == 'NI-CMV' || vent.mode == 'PC-PSV VG'">
+        <td>PIP</td>
+        <td>{{::vent.pip}}</td>
+      </tr>
+      <!--<tr>-->
+        <!--<td>T<sub>i</sub></td>-->
+        <!--<td>{{::vent.ti}}</td>-->
+      <!--</tr>-->
+      <!--<tr ng-show="fm.values.vent_components___ie">-->
+        <!--<td>i:e</td>-->
+        <!--<td>{{:: vent.ti / vent.te || '&#45;&#45;'}}</td>-->
+      <!--</tr>-->
+      <tr>
+        <td>PEEP</td>
+        <td>{{::vent.peep}}</td>
+      </tr>
+      <tr>
+        <td>FiO2</td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--HFJV-->
+    <table ng-if="::vent.mode == 'HFJV'" class="small-padding-table">
+      <tbody>
+      <tr>
+        <td>freq</td>
+        <td>{{::vent.freq}}</td>
+      </tr>
+      <tr>
+        <td>PIP</td>
+        <td>{{::vent.pip}}</td>
+      </tr>
+      <tr>
+        <td>PEEP</td>
+        <td>{{::vent.peep}}</td>
+      </tr>
+      <!--<tr ng-show="fm.values.vent_components___map_obs">-->
+        <!--<td>map<sub>o</sub></td>-->
+        <!--<td>{{::vent.map_obs}}</td>-->
+      <!--</tr>-->
+      <tr>
+        <td>FiO2</td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--HFOV-->
+    <table ng-if=":: vent.mode == 'HFOV'" class="small-padding-table">
+      <tbody>
+      <tr>
+        <td>amp</td>
+        <td>{{::vent.amp}}</td>
+      </tr>
+      <tr>
+        <td>hz</td>
+        <td>{{::vent.hz}}</td>
+      </tr>
+      <tr>
+        <td>map</td>
+        <td>{{::vent.map}}</td>
+      </tr>
+      <tr>
+        <td>FiO2</td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--nasal cannula-->
+    <table ng-if="vent.mode == 'NC'" class="small-padding-table">
+      <tbody>
+      <tr>
+        <td>flow</td>
+        <td>{{::vent.flow}}</td>
+      </tr>
+      <tr ng-show="fm.values.vent_components___fio2">
+        <td>FiO2</td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div ng-switch-when="diagram">
+    <span class="canvas-label">{{::patient.ventilator.mode}}</span>
+
+    <!--IMV-->
+    <table ng-if="::vent.mode == 'VC-SIMV' || vent.mode == 'MMV' || vent.mode == 'PC-PSV VG' || vent.mode == 'PC-SIMV' || vent.mode == 'NI-CMV' || vent.mode == 'PC-PSV VG'" style="font-size: 110%">
+      <tbody>
+      <tr>
+        <td style="border-bottom: thin solid black; border-right: thin solid black">{{::vent.vt ||
+          vent.pip }}
+        </td>
+        <td style="border-bottom: thin solid black">{{::vent.rate}}</td>
+      </tr>
+      <tr>
+        <td style="border-right: thin solid black">{{::vent.peep}}<span ng-show="::vent.hasOwnProperty('ps')">+&Delta;{{::vent.ps}}</span></td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--HFJV-->
+    <table ng-if="::vent.mode == 'HFJV'" style="font-size: 110%">
+      <tbody>
+      <tr>
+        <td style="border-bottom: thin solid black; border-right: thin solid black">{{::vent.vt ||
+          vent.pip }}
+        </td>
+        <td style="border-bottom: thin solid black">{{::vent.freq || vent.hz || vent.rate}}</td>
+      </tr>
+      <tr>
+        <td style="border-right: thin solid black">{{::vent.peep}}</td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--HFOV-->
+    <table ng-if="::vent.mode == 'HFOV'" style="font-size: 110%">
+      <tbody>
+      <tr>
+        <td style="border-bottom: thin solid black; border-right: thin solid black">{{::vent.amp}}
+        </td>
+        <td style="border-bottom: thin solid black">{{::vent.hz}}</td>
+        <td ng-show="vent.hasOwnProperty('ino')" rowspan="2"><floating-label>iNO</floating-label>{{vent.ino}}</td>
+      </tr>
+      <tr>
+        <td style="border-right: thin solid black">{{::vent.map}}</span></td>
+        <td>{{::vent.fio2}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

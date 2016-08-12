@@ -1,0 +1,69 @@
+<!--Scenario date: {{scenarioDate| date : 'medium'}}-->
+
+<!--<h2>$scope.test_data</h2>-->
+<!--<textarea>{{test_data}}</textarea>-->
+
+<div style="float: right">Scenario printed: {{scenarioDate | frameshiftDate : scenarioDate | date : 'yyyy-MM-dd HH:mm'
+  }}
+</div>
+
+<table class="canvas-table" ng-repeat="patient in patients | orderBy:'demographics.name_last'" ng-init="pid = patient.demographics.pid"
+       ng-controller="ptCtrl as ptCtrl">
+  <tbody>
+    <tr>
+      <td colspan="8">
+        <div layout="column" flex class="pt-header">
+          <div layout="row" flex>
+            <component item-id="id_name" flex></component>
+            <component ng-if="fm.values['items___id_mrn']" item-id="id_mrn" flex="10"></component>
+            <component ng-if="fm.values['items___id_sex']" item-id="id_sex" flex="5"></component>
+            <component ng-if="fm.values['items___id_birth_date']" item-id="id_birth_date" flex="13"></component>
+            <component ng-if="fm.values['items___demog_provider']" item-id="demog_provider" flex="10"></component>
+            <component ng-if="fm.values['items___demog_team_name']" item-id="demog_team_name" flex="10"></component>
+            <component ng-if="fm.values['items___demog_location']" item-id="demog_location" flex="10"></component>
+          </div>
+          <div layout="row" flex>
+            <component ng-if="fm.values['items___status_summary']" item-id="status_summary" flex></component>
+            <component ng-if="fm.values['items___status_alerts']" item-id="status_alerts"></component>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <component ng-if="fm.values['items___status_age_weight']" item-id="status_age_weight"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___status_vitals']" item-id="status_vitals"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___probs_icd']" item-id="probs_icd"></component>
+        <component ng-if="fm.values['items___status_by_system']" item-id="status_by_system"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___resp_vent']" item-id="resp_vent"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___fen_lines_fluids']" item-id="fen_lines_fluids"></component>
+        <component ng-if="fm.values['items___fen_intake']" item-id="fen_intake"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___lab_blood_gas']" item-id="lab_blood_gas"></component>
+        <div layout="row">
+          <component ng-if="fm.values['items___lab_cbc']" item-id="lab_cbc" flex="50"></component>
+          <component ng-if="fm.values['items___lab_electrolyte_panel']" item-id="lab_electrolyte_panel"
+                     flex="50"></component>
+        </div>
+        <component ng-if="fm.values['items___lab_coag']" item-id="lab_coag"></component>
+        <component ng-if="fm.values['items___lab_bili']" item-id="lab_bili"></component>
+        <component ng-if="fm.values['items___lab_blood_type']" item-id="lab_blood_type"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___meds_list']" item-id="meds_list"></component>
+      </td>
+      <td>
+        <component ng-if="fm.values['items___extras_todo']" item-id="extras_todo"></component>
+      </td>
+    </tr>
+  </tbody>
+</table>

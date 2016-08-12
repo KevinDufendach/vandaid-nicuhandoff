@@ -1,0 +1,6 @@
+<div layout="row">
+  <div ng-repeat="alert in patient.alerts" ng-show="fm.values['alert_components___'+alert.type]">
+    {{alert.text}}<span ng-hide="$last">/</span>
+  </div>
+  <span ng-hide="patient.alerts.length > 0">No Alerts</span>
+</div>

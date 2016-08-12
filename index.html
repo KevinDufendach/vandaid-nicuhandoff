@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<!--[if IE]>
+<html class="lt-ie10">
+<head>
+  <style type="text/css">
+    #ie_box {
+      height: 100%;
+      width: 100%;
+      vertical-align: middle;
+
+      font-size: larger;
+    }
+
+    table {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    #url {
+      border: 1px solid #ff0000;
+      background-color: #f3f3f3;
+      padding: 5px;
+    }
+  </style>
+
+  <title>Unsupported Browser</title>
+</head>
+
+<body style="min-height: 100%" onload="document.getElementById('url').innerHTML = window.location.href">
+<div id="ie_box">
+  <table align="center">
+    <tbody>
+    <tr>
+      <td colspan="3">
+        <h1>Unsupported Browser</h1>
+        <p>This software does not run in Internet Explorer. Please use Chrome or Firefox instead.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="/img/Internet_Explorer_9_do_not_use.png">
+      </td>
+      <td>
+        <img src="/img/right_arrow.png">
+      </td>
+      <td>
+        <img src="/img/chrome_icon_240px.png">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <p>To continue, copy and paste the following URL into the Chrome Address bar:</p>
+        <div id="url">loading_address</div>
+        <p>Chrome can be accessed from the desktop of a clinical workstation:</p>
+        <img src="/img/cws_desktop.png">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+<![endif]-->
+<!--[if !(IE)]><!--> <html lang="en" ng-app="Vand-AID">
+
+<head>
+  <link href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,400italic,700' rel='stylesheet'
+        type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- Material design icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <title>VandAID - Active Interface Design by Vanderbilt</title>
+</head>
+
+<body layout="column" ng-controller="VandAIDApp as library">
+
+<!-- Top identity bar -->
+<div ng-include="'top_identity_bar_standard_menu.html'"></div>
+
+<div layout="row" flex ng-cloak ng-init="sideBoxCollapsed = false">
+  <!-- Side Navigation Bar -->
+  <md-sidenav class="md-sidenav-left md-whiteframe-z1" flex
+              ng-class="{'collapsed' : sideBoxCollapsed, 'clickable' : sideBoxCollapsed}"
+              md-component-id="left-sidenav"
+              md-is-locked-open="$mdMedia('gt-sm')">
+
+    <div flex layout="row">
+      <sidebox layout="row" flex></sidebox>
+    </div>
+  </md-sidenav>
+
+  <div flex layout="row" class="page-background" >
+    <!-- Collapse bar -->
+    <div hide show-gt-sm class="collapse-bar md-icon-button" ng-click="sideBoxCollapsed = !sideBoxCollapsed" layout="row" layout-align="center center">
+      <md-icon ng-hide="sideBoxCollapsed" class="material-icons" aria-label="Collapse Toolbox">
+        chevron_left
+      </md-icon>
+      <md-icon ng-show="sideBoxCollapsed" class="material-icons" aria-label="Expand Toolbox">
+        chevron_right
+      </md-icon>
+    </div>
+
+    <!-- Main content -->
+    <md-content id="content" class="page-container" flex>
+      <div class="instructions">
+        <h2>Scenario:</h2>
+        <p>Imagine you are receiving handoff from one of your colleagues to cover a set of patients for the night.
+          Before your handoff, your colleague will hand you a printed patient list.
+          Below are 5 patients that might appear on that list.</p>
+          <p>Your task is to customize this list using the toolbox to your left.
+            When you are finished, use the "Save and Submit" button below to send your preferences to the design team.</p>
+      </div>
+      <div class="page" ng-style="{'font-size': fm.values.font_size + 'pt'}" flex layout="row">
+        <div class="page-inner">
+          <component-canvas>Loading...</component-canvas>
+        </div>
+      </div>
+    </md-content>
+  </div>
+
+  <!-- Submit button -->
+  <md-button hide show-gt-md class="submit-fab md-raised" ng-class="needsSaveTip ? 'md-warn' : 'md-accent'" aria-label="Save and Submit" ng-click="submitData()">
+    Save and Submit
+  </md-button>
+
+</div>
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
+
+<!-- My Custom Dependencies -->
+<script src="/js/toolbox.js"></script>
+
+<script src="/js/app.js"></script>
+<script src="/js/canvas.js"></script>
+<script src="/js/ptCanvas.js"></script>
+<script src="/js/propertiesPanel.js"></script>
+<script src="/js/labManager.js"></script>
+<script src="/js/itemManager.js"></script>
+<script src="/js/fieldManager.js"></script>
+<script src="/js/sidebox.js"></script>
+<script src="/js/expandable.js"></script>
+<script src="/js/menuBar.js"></script>
+<script src="/resources/selectionModel.js"></script>
+<script src="/resources/observer.js"></script>
+<script src="/js/top_bar.js"></script>
+
+</body>
+</html>
+<!--<![endif]-->

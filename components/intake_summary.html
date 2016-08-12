@@ -1,0 +1,6 @@
+<div>Enteral: {{::ptCtrl.totalEnteralFluids / patient.vitals.wt | number:0}}, Total: {{::ptCtrl.totalFluids() / patient.vitals.wt | number:0}}</div>
+<div ng-show="fm.values.enteral_details == '1'">
+  <div ng-repeat="enteral in patient.enteral_fluids">
+    {{enteral.content}} {{enteral.volume}}mL q{{enteral.frequency}} x{{enteral.duration}}'
+  </div>
+</div>

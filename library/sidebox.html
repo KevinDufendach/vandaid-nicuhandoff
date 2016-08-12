@@ -1,0 +1,54 @@
+<!--<md-list flex class="md-dense">-->
+<md-content flex>
+
+  <md-toolbar class="md-hue-2 md-toolbar-tools">
+    <md-icon class="material-icons">build</md-icon>
+    <h2> Toolbox</h2>
+    <span flex></span>
+    <md-button hide-gt-sm class="md-icon-button" ng-click="toggleSidenav('left-sidenav')"><md-icon>menu</md-icon></md-button>
+  </md-toolbar>
+  <!--<p ng-repeat="itemId in sideboxCtrl.itemSettingsExpansionSM.items">{{itemId}}</p>-->
+
+  <section ng-repeat="category in itemManager.getCategories()">
+    <md-subheader class="md-hue-1">{{category.name}}</md-subheader>
+    <md-list>
+      <div ng-repeat="item in itemManager.getItemsByCategory(category.id)">
+        <md-list-item>
+          <md-checkbox ng-disabled="item.disabled"
+                       ng-model="fm.values['items___'+item.id]"
+                       aria-label="item.name"></md-checkbox>
+          <p>{{::item.name}}</p>
+          <md-button class="md-secondary md-icon-button md-primary" ng-if="::item.hasFields()"
+                     ng-disabled="!fm.values['items___'+item.id]"
+                     ng-click="sideboxCtrl.itemSettingsExpansionSM.touch(item.id)">
+            <md-icon ng-hide="(fm.values['items___'+item.id] && sideboxCtrl.itemSettingsExpansionSM.isSelected(item.id))" class="material-icons">settings</md-icon>
+            <md-icon ng-show="(fm.values['items___'+item.id] && sideboxCtrl.itemSettingsExpansionSM.isSelected(item.id))" class="material-icons">expand_less</md-icon>
+          </md-button>
+        </md-list-item>
+        <expandable ng-class="{'menu-expanded': (fm.values['items___'+item.id] && sideboxCtrl.itemSettingsExpansionSM.isSelected(item.id))}">
+          <menu-content>
+            <div>
+              <field-pane ng-repeat="fieldId in item.fields"></field-pane>
+            </div>
+          </menu-content>
+        </expandable>
+      </div>
+      <div>
+        <field-pane ng-repeat="fieldId in category.categoryFields"></field-pane>
+      </div>
+    </md-list>
+  </section>
+
+  <!-- Submit button -->
+  <div layout-padding layout="row">
+    <span flex></span>
+    <md-button class="md-accent md-raised" aria-label="Save and Submit" ng-click="submitData()">
+      <!--<md-tooltip md-direction="top" md-visible="tooltipVisible">Save and Submit</md-tooltip>-->
+      <!--<md-icon class="material-icons">send</md-icon>-->
+      Save and Submit
+    </md-button>
+    <span flex></span>
+
+  </div>
+
+</md-content>

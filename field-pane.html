@@ -1,0 +1,65 @@
+<md-card flex class="md-whiteframe-1dp">
+  <md-card-content >
+    <h4>{{field.label}}</h4>
+    <div ng-switch="field.type">
+      <div layout="row" layout-sm="column" layout-align="space-around" ng-switch-default>
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+
+      <md-input-container flex ng-switch-when="text">
+        <label>Comments</label>
+        <textarea ng-model="fm.values[field.id]" md-select-on-focus></textarea>
+      </md-input-container>
+
+      <md-radio-group ng-model="fm.values[field.id]" ng-switch-when="radio" ng-switch="fieldAlign">
+        <div ng-switch-default>
+          <md-radio-button ng-repeat="option in field.options"
+                           ng-value="option.value">{{option.label}}</md-radio-button>
+        </div>
+        <div ng-switch-when="horizontal">
+          <table class="horizontal-field-table">
+            <tbody>
+            <tr>
+              <td width="20%" ng-repeat="option in field.options" align="center" layout-padding>{{option.label}}</td>
+            </tr>
+            <tr>
+              <td ng-repeat="option in field.options" align="center" layout-padding>
+                <div layout="row">
+                  <span flex></span>
+                  <md-radio-button ng-value="option.value" align="center" aria-label="{{option.value}}"></md-radio-button>
+                  <span flex></span>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </md-radio-group>
+
+      <md-radio-group ng-model="fm.values[field.id]" ng-switch-when="yesno">
+        <md-radio-button ng-repeat="option in field.options"
+                         ng-value="option.value">{{option.label}}</md-radio-button>
+      </md-radio-group>
+
+      <md-radio-group ng-model="fm.values[field.id]" ng-switch-when="truefalse">
+        <md-radio-button ng-repeat="option in field.options"
+                         ng-value="option.value">{{option.label}}</md-radio-button>
+      </md-radio-group>
+
+      <div ng-switch-when="checkbox">
+        <div ng-repeat="option in field.options" class="checkbox">
+          <md-checkbox ng-model="fm.values[field.id + '___' + option.value]">{{ option.label }}</md-checkbox>
+        </div>
+      </div>
+
+      <div ng-switch-when="checklist">
+        <div ng-repeat="option in field.options">
+          <md-checkbox ng-checked="exists(option.value, field.value)" ng-click="toggle(option.value, field.value)">{{ option.label }}</md-checkbox>
+        </div>
+      </div>
+    </div>
+
+    <!--<ng-include src="getWidgetType(field.type)"></ng-include>-->
+    <div class="field-note" ng-bind-html="field.field_note"></div>
+  </md-card-content>
+</md-card>

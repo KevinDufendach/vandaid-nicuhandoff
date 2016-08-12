@@ -1,0 +1,273 @@
+{
+  "items": [
+    {
+      "name": "Patient Name",
+      "id": "id_name",
+      "component": "pt_name.html",
+      "selected": true,
+      "disabled": true,
+      "fields": [
+        "name_display"
+      ]
+    },
+    {
+      "name": "MR Number",
+      "id": "id_mrn",
+      "component": "mrn.html"
+    },
+    {
+      "name": "Sex",
+      "id": "id_sex",
+      "component": "sex.html",
+      "fields": [
+        "sex_display"
+      ]
+    },
+    {
+      "name": "Birth date",
+      "id": "id_birth_date",
+      "component": "birthdate.html"
+    },
+    {
+      "name": "Team name",
+      "id": "demog_team_name",
+      "component": "team_name.html"
+    },
+    {
+      "name": "Provider",
+      "id": "demog_provider",
+      "component": "provider_name.html"
+    },
+    {
+      "name": "Location",
+      "id": "demog_location",
+      "component": "pt_location.html"
+    },
+    {
+      "name": "Clinical alerts",
+      "id": "status_alerts",
+      "component": "clinical_alerts.html",
+      "fields": [
+        "alert_components"
+      ]
+    },
+    {
+      "name": "Editable Summary",
+      "id": "status_summary",
+      "component": "editable_summary.html"
+    },
+    {
+      "name": "Age and weight",
+      "id": "status_age_weight",
+      "selected": true,
+      "component": "age_weight.html",
+      "fields": [
+        "age_weight_style",
+        "age_weight_birth"
+      ]
+    },
+    {
+      "name": "Vital signs",
+      "id": "status_vitals",
+      "selected": true,
+      "component": "vitals.html",
+      "fields": [
+        "vitals_components",
+        "bp_display"
+      ]
+    },
+    {
+      "name": "Resuscitation Status",
+      "id": "stats_dnr",
+      "selected": false,
+      "disabled": true,
+      "component": "base.html"
+    },
+    {
+      "name": "Isolation Status",
+      "id": "status_iso",
+      "selected": false,
+      "component": "base.html"
+    },
+    {
+      "name": "ICD diagnoses",
+      "id": "probs_icd",
+      "selected": false,
+      "component": "icd.html"
+    },
+    {
+      "name": "Plan by System",
+      "id": "status_by_system",
+      "selected": true,
+      "component": "status_by_system.html"
+    },
+    {
+      "name": "IV Fluids",
+      "id": "fen_lines_fluids",
+      "selected": true,
+      "component": "iv_fluids.html",
+      "fields": [
+        "fluid_components"
+      ]
+    },
+    {
+      "name": "Intake Summary",
+      "id": "fen_intake",
+      "selected": true,
+      "component": "intake_summary.html",
+      "fields": [
+        "enteral_details"
+      ]
+    },
+    {
+      "name": "Intake/Output",
+      "id": "fen_io",
+      "selected": false,
+      "component": "base.html"
+    },
+    {
+      "name": "Ventilation Settings",
+      "id": "resp_vent",
+      "selected": true,
+      "component": "vent.html",
+      "fields": [
+        "vent_display"
+      ]
+    },
+    {
+      "name": "Blood Gas",
+      "id": "lab_blood_gas",
+      "selected": true,
+      "component": "blood_gas.html",
+      "fields": [
+        "blood_gas_components"
+      ],
+      "fieldGroups": [
+        "lab_group"
+      ],
+      "labs": [
+        "2744-1",
+        "2019-8",
+        "2703-7",
+        "1960-4",
+        "2708-6",
+        "1925-7",
+        "2746-6",
+        "2021-4",
+        "2705-2",
+        "14627-4",
+        "2711-0",
+        "1927-3",
+        "11558-4",
+        "11557-6",
+        "11556-8",
+        "20564-1",
+        "11555-0"
+      ]
+    },
+    {
+      "name": "Electrolyte Panel",
+      "id": "lab_electrolyte_panel",
+      "selected": false,
+      "component": "lyte_panel.html",
+      "fieldGroups": [
+        "lab_group"
+      ],
+      "fields": [
+        "electrolyte_components"
+      ],
+      "labs": [
+        "2951-2",
+        "2823-3",
+        "2075-0",
+        "2028-9",
+        "3094-0",
+        "2160-0",
+        "17861-6"
+      ]
+    },
+    {
+      "name": "CBC",
+      "id": "lab_cbc",
+      "selected": true,
+      "component": "cbc.html",
+      "fields": [
+        "cbc_anc"
+      ],
+      "fieldGroups": [
+        "lab_group"
+      ],
+      "labs": [
+        "4544-3",
+        "718-7",
+        "777-3",
+        "6690-2",
+        "751-8"
+      ]
+    },
+    {
+      "name": "Coagulation Labs",
+      "id": "lab_coag",
+      "selected": true,
+      "component": "coags.html",
+      "fields": [
+        "coags_display",
+        "coag_components"
+      ],
+      "fieldGroups": [
+        "lab_group"
+      ],
+      "labs": [
+        "3255-7",
+        "6301-6",
+        "5902-2",
+        "3184-9",
+        "3173-2",
+        "3218-5",
+        "48065-7"
+      ]
+    },
+    {
+      "name": "Bilirubin",
+      "id": "lab_bili",
+      "component": "bili.html",
+      "labs": [
+        "1975-2",
+        "1968-7"
+      ]
+    },
+    {
+      "name": "Blood type",
+      "id": "lab_blood_type",
+      "selected": false,
+      "component": "blood_type.html"
+    },
+    {
+      "name": "Medication List",
+      "id": "meds_list",
+      "selected": false,
+      "component": "med-list.html",
+      "fields": [
+        "med_components"
+      ]
+    },
+    {
+      "name": "To Do list",
+      "id": "extras_todo",
+      "selected": true,
+      "component": "to_do_list.html"
+    }
+  ],
+  "field_groups": [
+    {
+      "lab_group": {
+        "label": "Options for all labs",
+        "fields": [
+          "bold_out_of_range_labs",
+          "ital_new_labs",
+          "new_labs"
+        ]
+      }
+    }
+  ]
+}
