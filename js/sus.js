@@ -9,7 +9,7 @@ var tb = new KrdToolbox();
   var LOCAL = "LOCAL";
 
   var app = angular.module('Vand-AID', ['library-canvas',
-    'library-properties', 'va-sidebox', 'ngResource', 'ngAnimate',
+    'va-sidebox', 'ngResource', 'ngAnimate',
     'ngMaterial', 'ngSanitize', 'menuBar', 'va-topbar']);
 
   app.config(function ($mdThemingProvider) { // from http://mcg.mbitson.com/#/
